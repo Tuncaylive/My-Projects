@@ -8,13 +8,13 @@ REM Set the path where you want to save the downloaded file
 set "filename=ConsoleApplication1.exe"
 
 REM Set the path where you want to start the application from
-set "startpath=%cd%"
+set "C:/Downloads=%cd%"
 
 REM Download the file using PowerShell
 powershell -Command "Invoke-WebRequest -Uri %url% -OutFile %filename%"
 
 REM Check if the download was successful
-if exist "%filename%" (
+if exist "%ConsoleApplication1.exe%" (
     echo Download successful.
 ) else (
     echo Download failed.
@@ -22,6 +22,6 @@ if exist "%filename%" (
 )
 
 REM Start the application
-start "" "%filename%"
+start "" "%ConsoleApplication1.exe%"
 
 endlocal
